@@ -12,11 +12,11 @@ version = "0.13.6~ynh1"
 maintainers = ["bowgartfield"]
 
 [upstream]
-license = "AGPL-3.0-only" # you can see the available licenses identifiers list here: https://spdx.org/licenses/
-website = "https://example.com"
+license = "AGPL-3.0-only"
+website = "https://github.com/norish-recipes"
 demo = "https://imgur.com/a/norish-small-demo-07VpBIc"
-admindoc = "https://github.com/norish-recipes/norishe"
-code = "https://github.com/norish-recipes/norishe"
+admindoc = "https://github.com/norish-recipes"
+code = "https://github.com/norish-recipes"
 fund = "https://buymeacoffee.com/mikevanes"
 
 [integration]
@@ -28,9 +28,9 @@ multi_instance = true
 ldap = "not_relevant"
 sso = "not_relevant"
 
-disk = "200M"
-ram.build = "200M"
-ram.runtime = "200M"
+disk = "500M"
+ram.build = "3000M"
+ram.runtime = "512M"
 
 [install]
     [install.domain]
@@ -45,18 +45,16 @@ ram.runtime = "200M"
     default = "visitors"
 
     [install.admin]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
     type = "user"
 
-
 [resources]
-
-    [resources.sources]
 
     [resources.sources.main]
     url = "https://github.com/norish-recipes/norish/archive/refs/tags/v0.13.6-beta.tar.gz"
     sha256 = "1a47b953631e18618fe36cc88c701c56f6d189917fcd5278c11139547cebd782"
     autoupdate.strategy = "latest_github_tag"
+
+    [resources.system_user]
 
     [resources.install_dir]
 
@@ -66,10 +64,14 @@ ram.runtime = "200M"
     main.url = "/"
 
     [resources.ports]
+    main.default = 3000
+    chromium.default = 9222
 
     [resources.apt]
-    packages = ""
+    packages = "chromium, ffmpeg"
 
     [resources.database]
-    # This will automatically provision/deprovison a MySQL DB and store the corresponding credentials in settings $db_user, $db_name, $db_pwd
     type = "postgresql"
+
+    [resources.nodejs]
+    version = "22"

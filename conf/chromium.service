@@ -1,0 +1,19 @@
+[Unit]
+Description=Chromium Headless for Norish
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=__APP__
+Group=__APP__
+ExecStart=/usr/bin/chromium --no-sandbox --disable-gpu --disable-dev-shm-usage --remote-debugging-address=127.0.0.1 --remote-debugging-port=__PORT_CHROMIUM__ --headless
+Restart=on-failure
+RestartSec=5
+
+# Security hardening
+NoNewPrivileges=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target
