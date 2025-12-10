@@ -1,18 +1,3 @@
-From: YunoHost Packaging <packaging@yunohost.org>
-Subject: [PATCH] Fix redirect URL when behind reverse proxy
-
-When running behind a reverse proxy (like nginx), the request.url contains
-the internal server URL (e.g., http://localhost:3000) instead of the public URL.
-
-This patch fixes the redirect to use X-Forwarded-Host and X-Forwarded-Proto
-headers to construct the correct public URL.
-
----
- proxy.ts | 12 +++++++++++-
- 1 file changed, 11 insertions(+), 1 deletion(-)
-
-diff --git a/proxy.ts b/proxy.ts
-index 1234567..abcdefg 100644
 --- a/proxy.ts
 +++ b/proxy.ts
 @@ -12,8 +12,18 @@ export async function proxy(request: NextRequest) {
