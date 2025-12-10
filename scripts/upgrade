@@ -80,8 +80,7 @@ pushd "$install_dir"
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" pnpm install --frozen-lockfile
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" pnpm build
 
-    # Remove unneeded files to save space
-    ynh_hide_warnings ynh_exec_as_app pnpm prune --prod --ignore-scripts
+    # Clean up cache to save space (keep all dependencies as some devDependencies are needed at runtime)
     ynh_hide_warnings ynh_exec_as_app pnpm store prune
     ynh_safe_rm .next/cache
 popd
