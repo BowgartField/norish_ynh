@@ -35,8 +35,11 @@ ram.runtime = "512M"
 [install]
     [install.domain]
     type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/"
     # App must be installed at root (no subpath support)
-    full_domain = true
 
     [install.init_main_permission]
     type = "group"
