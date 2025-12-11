@@ -55,6 +55,19 @@ ram.runtime = "512M"
     sha256 = "1a47b953631e18618fe36cc88c701c56f6d189917fcd5278c11139547cebd782"
     autoupdate.strategy = "latest_github_tag"
 
+    [resources.sources.yt-dlp]
+    amd64.url = "https://github.com/yt-dlp/yt-dlp/releases/download/2025.12.08/yt-dlp_linux.zip"
+    amd64.sha256 = "2ebc3ff73c03a2b8d792b348b04174a155ce7c2f9a854da54868ef202b1e9f22"
+    arm64.url = "https://github.com/yt-dlp/yt-dlp/releases/download/2025.12.08/yt-dlp_linux_aarch64.zip"
+    arm64.sha256 = "230bb8ec2a31b791fe63993d64d3ce626b3af111307de487fc47f7243aafbfe1"
+    armhf.url = "https://github.com/yt-dlp/yt-dlp/releases/download/2025.12.08/yt-dlp_linux_armv7l.zip"
+    armhf.sha256 = "773f8fcee7f354e054629df403193fc6c4d9e64907d323bb97f59b7d4425190d"
+
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset.amd64 = "yt-dlp_linux.zip"
+    autoupdate.asset.arm64 = "yt-dlp_linux_aarch64.zip"
+    autoupdate.asset.armhf = "yt-dlp_linux_armv7l.zip"
+
     [resources.system_user]
 
     [resources.install_dir]
