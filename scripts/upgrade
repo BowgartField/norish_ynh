@@ -35,9 +35,9 @@ ynh_setup_source --dest_dir="$install_dir" --full_replace --keep=".env"
 #=================================================
 ynh_script_progression "Installing yt-dlp..."
 
-mkdir -p "$install_dir/bin"
-ynh_setup_source --source_id="yt-dlp" --dest_dir="$install_dir/bin"
-chmod +x "$install_dir/bin/yt-dlp"
+mkdir -p /app/bin
+ynh_setup_source --source_id="yt-dlp" --dest_dir="/app/bin"
+chmod +x /app/bin/yt-dlp
 
 #=================================================
 # CREATE DATA DIRECTORY
