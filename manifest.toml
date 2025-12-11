@@ -51,8 +51,8 @@ ram.runtime = "512M"
 [resources]
 
     [resources.sources.main]
-    url = "https://github.com/norish-recipes/norish/archive/refs/tags/v0.13.6-beta.tar.gz"
-    sha256 = "1a47b953631e18618fe36cc88c701c56f6d189917fcd5278c11139547cebd782"
+    url = "https://github.com/BowgartField/norish/archive/refs/tags/v1.0.tar.gz"
+    sha256 = "92676740990a6c5d0c0477fd7913244f11003f20d65e80bab0f83a0d5f16f6b0"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.sources.yt-dlp]
