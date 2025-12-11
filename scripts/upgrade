@@ -37,7 +37,6 @@ ynh_script_progression "Installing yt-dlp..."
 
 mkdir -p "$install_dir/bin"
 ynh_setup_source --source_id="yt-dlp" --dest_dir="$install_dir/bin"
-mv "$install_dir/bin"/yt-dlp_linux* "$install_dir/bin/yt-dlp"
 chmod +x "$install_dir/bin/yt-dlp"
 
 #=================================================
