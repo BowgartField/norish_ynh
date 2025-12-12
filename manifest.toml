@@ -51,8 +51,8 @@ ram.runtime = "512M"
 [resources]
 
     [resources.sources.main]
-    url = "https://github.com/BowgartField/norish/archive/refs/tags/v1.1.tar.gz"
-    sha256 = "4983f8e10d6b012a88b24c4d3db276bce997123a07479a260b1634c32437a91d"
+    url = "https://github.com/BowgartField/norish/archive/refs/tags/v1.2.tar.gz"
+    sha256 = "239fe13134bb8830e8611223041c638053f4e88ab7a0e39bf687ae075574b989"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.sources.yt-dlp]
